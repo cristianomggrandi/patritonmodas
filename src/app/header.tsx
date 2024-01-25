@@ -1,7 +1,6 @@
+import HeaderIcons from "@/components/HeaderIcons"
 import Image from "next/image"
 import Link from "next/link"
-import { IoPersonCircleOutline } from "react-icons/io5"
-import { TiShoppingCart } from "react-icons/ti"
 
 export default function Header() {
     return (
@@ -31,8 +30,7 @@ export default function Header() {
                         <input className="rounded-full p-2" placeholder="O que você procura?" />
                     </li>
                     <li className="flex items-center gap-3">
-                        <IoPersonCircleOutline className="text-5xl" />
-                        <TiShoppingCart className="text-5xl" />
+                        <HeaderIcons />
                     </li>
                 </ul>
             </nav>

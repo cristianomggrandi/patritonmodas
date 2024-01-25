@@ -1,162 +1,74 @@
 import Image from "next/image"
 import Link from "next/link"
+import BuyButton from "./BuyButton"
 
-export default function Produto({
+type ParamType = { [key: string]: string | string[] | undefined }
+
+export default function ProductPage({
+    params,
     searchParams,
 }: {
-    searchParams: { [key: string]: string | string[] | undefined }
+    params: ParamType
+    searchParams: ParamType
 }) {
-    const cores = ["fff", "000", "ff0", "f00", "f0f", "0ff"]
-    const tamanhos = ["p", "m", "g", "gg", "xg"]
+    const colors = ["fff", "000", "ff0", "f00", "f0f", "0ff"]
+    const sizes = ["p", "m", "g", "gg", "g1", "g2", "g3"]
 
-    console.log("search", searchParams)
+    const selectedColor = colors.find(c => c === searchParams.color) || colors[0]
+    const selectedSize = sizes.find(c => c === searchParams.size) || sizes[0]
 
-    const corSelecionada = cores.find(c => c === searchParams.cor) || cores[0]
-    const tamanhoSelecionado = tamanhos.find(c => c === searchParams.tamanho) || cores[0]
+    const product = {
+        id: Number(params.idProduto),
+        name: "Vestido Teste",
+        price: 119.9,
+        quantity: 1,
+    }
 
     return (
         <main>
             <div className="flex p-16 gap-12">
                 <div className="flex w-1/2 justify-end">
-                    <Image src="/roupafeminina.jpg" alt="Imagem produto" height={320} width={240} />
+                    <Image src="/roupafeminina.jpg" alt="Imagem product" height={320} width={240} />
                 </div>
-                <div className="w-1/2">
-                    <div className="mb-4">
-                        <h1 className="font-bold text-3xl">Vestido Teste</h1>
-                        <span className="">Id: 578591623</span>
+                <div className="w-1/2 flex flex-col justify-between">
+                    <div className="">
+                        <h1 className="font-bold text-3xl">{product.name}</h1>
+                        <span className="">Id: {product.id}</span>
                     </div>
-                    <div className="my-4">
+                    <div className="">
                         <p className="my-1">Selecione a cor:</p>
                         <ul className="flex gap-1">
-                            {cores.map(cor => (
-                                <li key={cor}>
-                                    <Link href={`?cor=${cor}&tamanho=${tamanhoSelecionado}`}>
+                            {colors.map(color => (
+                                <li key={color}>
+                                    <Link href={`?color=${color}&size=${selectedSize}`}>
                                         <div
-                                            className={`h-8 w-8 rounded-md border-2 border-solid ${corSelecionada === cor ? "border-neutral-500" : "border-neutral-300"}`}
-                                            style={{ backgroundColor: "#" + cor }}
+                                            className={`h-8 w-8 rounded-md border-2 border-solid ${selectedColor === color ? "border-neutral-500" : "border-neutral-300"}`}
+                                            style={{ backgroundColor: "#" + color }}
                                         />
                                     </Link>
                                 </li>
                             ))}
                         </ul>
                     </div>
-                    <div className="my-3">
+                    <div className="">
                         <p className="my-1">Selecione o tamanho:</p>
                         <ul className="flex gap-1">
-                            {tamanhos.map(tamanho => (
-                                <li key={tamanho}>
-                                    <Link href={`?cor=${corSelecionada}&tamanho=${tamanho}`}>
+                            {sizes.map(size => (
+                                <li key={size}>
+                                    <Link href={`?color=${selectedColor}&size=${size}`}>
                                         <div
-                                            className={`h-8 w-12 rounded-full text-center uppercase leading-relaxed border-2 border-solid ${tamanhoSelecionado === tamanho ? "border-neutral-500" : "border-neutral-300"} ${tamanhoSelecionado === tamanho ? "bg-contrast" : ""}`}
+                                            className={`h-8 w-12 rounded-full text-center uppercase leading-relaxed border-2 border-solid ${selectedSize === size ? "border-neutral-500" : "border-neutral-300"} ${selectedSize === size ? "bg-contrast" : ""}`}
                                         >
-                                            {tamanho}
+                                            {size}
                                         </div>
                                     </Link>
                                 </li>
                             ))}
                         </ul>
                     </div>
-                    <div className="my-3 font-bold text-2xl">R$ 119,90</div>
-                    <div className="my-3 font-bold text-2xl">
-                        <button className="bg-primary text-white border-2 border-solid border-neutral-900 rounded-xl uppercase py-3 px-8">
-                            Comprar
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <div className="flex p-16 gap-12">
-                <div className="flex w-1/2 justify-end">
-                    <Image src="/roupafeminina.jpg" alt="Imagem produto" height={320} width={240} />
-                </div>
-                <div className="w-1/2">
-                    <div className="mb-4">
-                        <h1 className="font-bold text-3xl">Vestido Teste</h1>
-                        <span className="">Id: 578591623</span>
-                    </div>
-                    <div className="my-4">
-                        <p className="my-1">Selecione a cor:</p>
-                        <ul className="flex gap-1">
-                            {cores.map(cor => (
-                                <li key={cor}>
-                                    <Link href={`?cor=${cor}&tamanho=${tamanhoSelecionado}`}>
-                                        <div
-                                            className={`h-8 w-8 rounded-md border-2 border-solid ${corSelecionada === cor ? "border-neutral-500" : "border-neutral-300"}`}
-                                            style={{ backgroundColor: "#" + cor }}
-                                        />
-                                    </Link>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-                    <div className="my-3">
-                        <p className="my-1">Selecione o tamanho:</p>
-                        <ul className="flex gap-1">
-                            {tamanhos.map(tamanho => (
-                                <li key={tamanho}>
-                                    <Link href={`?cor=${corSelecionada}&tamanho=${tamanho}`}>
-                                        <div
-                                            className={`h-8 w-12 rounded-full text-center uppercase leading-relaxed border-2 border-solid ${tamanhoSelecionado === tamanho ? "border-neutral-500" : "border-neutral-300"} ${tamanhoSelecionado === tamanho ? "bg-contrast" : ""}`}
-                                        >
-                                            {tamanho}
-                                        </div>
-                                    </Link>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-                    <div className="my-3 font-bold text-2xl">R$ 119,90</div>
-                    <div className="my-3 font-bold text-2xl">
-                        <button className="bg-primary text-white border-2 border-solid border-neutral-900 rounded-xl uppercase py-3 px-8">
-                            Comprar
-                        </button>
-                    </div>
-                </div>
-            </div>
-            <div className="flex p-16 gap-12">
-                <div className="flex w-1/2 justify-end">
-                    <Image src="/roupafeminina.jpg" alt="Imagem produto" height={320} width={240} />
-                </div>
-                <div className="w-1/2">
-                    <div className="mb-4">
-                        <h1 className="font-bold text-3xl">Vestido Teste</h1>
-                        <span className="">Id: 578591623</span>
-                    </div>
-                    <div className="my-4">
-                        <p className="my-1">Selecione a cor:</p>
-                        <ul className="flex gap-1">
-                            {cores.map(cor => (
-                                <li key={cor}>
-                                    <Link href={`?cor=${cor}&tamanho=${tamanhoSelecionado}`}>
-                                        <div
-                                            className={`h-8 w-8 rounded-md border-2 border-solid ${corSelecionada === cor ? "border-neutral-500" : "border-neutral-300"}`}
-                                            style={{ backgroundColor: "#" + cor }}
-                                        />
-                                    </Link>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-                    <div className="my-3">
-                        <p className="my-1">Selecione o tamanho:</p>
-                        <ul className="flex gap-1">
-                            {tamanhos.map(tamanho => (
-                                <li key={tamanho}>
-                                    <Link href={`?cor=${corSelecionada}&tamanho=${tamanho}`}>
-                                        <div
-                                            className={`h-8 w-12 rounded-full text-center uppercase leading-relaxed border-2 border-solid ${tamanhoSelecionado === tamanho ? "border-neutral-500" : "border-neutral-300"} ${tamanhoSelecionado === tamanho ? "bg-contrast" : ""}`}
-                                        >
-                                            {tamanho}
-                                        </div>
-                                    </Link>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-                    <div className="my-3 font-bold text-2xl">R$ 119,90</div>
-                    <div className="my-3 font-bold text-2xl">
-                        <button className=" py-3 px-16 bg-primary text-white border-2 border-solid border-neutral-900 rounded-xl uppercase">
-                            Comprar
-                        </button>
+                    <div className="font-bold text-2xl">
+                        <span className="my-3 font-bold text-2xl block">R$ {product.price}</span>
+                        <BuyButton product={product} />
                     </div>
                 </div>
             </div>
