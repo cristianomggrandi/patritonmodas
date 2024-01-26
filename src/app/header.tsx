@@ -46,7 +46,7 @@ export default function Header() {
                             Masculino
                             <IoIosArrowForward className="dropdown-arrow inline-block ml-3" />
                         </Link>
-                        <div className="absolute hidden w-full">
+                        <div className="absolute hidden w-full z-50">
                             <ul className="w-full p-2 bg-primary flex flex-col">
                                 <li className="flex items-center border-b-2 border-solid border-white">
                                     <Link className="w-full p-1 text-left" href="/vestido">
@@ -91,7 +91,7 @@ export default function Header() {
                             Feminino
                             <IoIosArrowForward className="dropdown-arrow inline-block ml-3" />
                         </Link>
-                        <div className="absolute hidden w-full">
+                        <div className="absolute hidden w-full z-50">
                             <ul className="w-full p-2 bg-primary flex flex-col">
                                 <li className="flex items-center border-b-2 border-solid border-white">
                                     <Link className="w-full p-1 text-left" href="/vestido">
@@ -136,7 +136,7 @@ export default function Header() {
                             Acessórios
                             <IoIosArrowForward className="dropdown-arrow inline-block ml-3" />
                         </Link>
-                        <div className="absolute hidden w-full">
+                        <div className="absolute hidden w-full z-50">
                             <ul className="w-full p-2 bg-primary flex flex-col">
                                 <li className="flex items-center border-b-2 border-solid border-white">
                                     <Link className="w-full p-1 text-left" href="/vestido">
@@ -181,7 +181,7 @@ export default function Header() {
                             Blusas
                             <IoIosArrowForward className="dropdown-arrow inline-block ml-3" />
                         </Link>
-                        <div className="absolute hidden w-full">
+                        <div className="absolute hidden w-full z-50">
                             <ul className="w-full p-2 bg-primary flex flex-col">
                                 <li className="flex items-center border-b-2 border-solid border-white">
                                     <Link className="w-full p-1 text-left" href="/vestido">
@@ -211,7 +211,7 @@ export default function Header() {
                             Calça
                             <IoIosArrowForward className="dropdown-arrow inline-block ml-3" />
                         </Link>
-                        <div className="absolute hidden w-full">
+                        <div className="absolute hidden w-full z-50">
                             <ul className="w-full p-2 bg-primary flex flex-col">
                                 <li className="flex items-center border-b-2 border-solid border-white">
                                     <Link className="w-full p-1 text-left" href="/saias">
