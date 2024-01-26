@@ -44,27 +44,41 @@ export default function Header() {
                             <IoIosArrowForward className="dropdown-arrow inline-block ml-3" />
                         </Link>
                         <div className="absolute hidden w-full">
-                            <ul className="w-full p-2 bg-black flex flex-col gap-2">
+                            <ul className="w-full p-2 bg-black flex flex-col">
                                 <li className="flex items-center border-b-2 border-solid border-cement">
-                                    <Link href="/vestido">Vestido</Link>
+                                    <Link className="w-full p-1 text-left" href="/vestido">
+                                        Vestido
+                                    </Link>
                                 </li>
                                 <li className="flex items-center border-b-2 border-solid border-cement">
-                                    <Link href="/shorts">Shorts</Link>
+                                    <Link className="w-full p-1 text-left" href="/shorts">
+                                        Shorts
+                                    </Link>
                                 </li>
                                 <li className="flex items-center border-b-2 border-solid border-cement">
-                                    <Link href="/saias">Saias</Link>
+                                    <Link className="w-full p-1 text-left" href="/saias">
+                                        Saias
+                                    </Link>
                                 </li>
                                 <li className="flex items-center border-b-2 border-solid border-cement">
-                                    <Link href="/casacos">Casacos</Link>
+                                    <Link className="w-full p-1 text-left" href="/casacos">
+                                        Casacos
+                                    </Link>
                                 </li>
                                 <li className="flex items-center border-b-2 border-solid border-cement">
-                                    <Link href="/jeans">Jeans</Link>
+                                    <Link className="w-full p-1 text-left" href="/jeans">
+                                        Jeans
+                                    </Link>
                                 </li>
                                 <li className="flex items-center border-b-2 border-solid border-cement">
-                                    <Link href="/macacao">Macacão</Link>
+                                    <Link className="w-full p-1 text-left" href="/macacao">
+                                        Macacão
+                                    </Link>
                                 </li>
                                 <li className="flex items-center border-b-2 border-solid border-cement">
-                                    <Link href="/calcados">Calçados</Link>
+                                    <Link className="w-full p-1 text-left" href="/calcados">
+                                        Calçados
+                                    </Link>
                                 </li>
                             </ul>
                         </div>
@@ -77,25 +91,39 @@ export default function Header() {
                         <div className="absolute hidden w-full">
                             <ul className="w-full p-2 bg-black flex flex-col gap-2">
                                 <li className="flex items-center border-b-2 border-solid border-cement">
-                                    <Link href="/vestido">Vestido</Link>
+                                    <Link className="w-full p-1 text-left" href="/vestido">
+                                        Vestido
+                                    </Link>
                                 </li>
                                 <li className="flex items-center border-b-2 border-solid border-cement">
-                                    <Link href="/shorts">Shorts</Link>
+                                    <Link className="w-full p-1 text-left" href="/shorts">
+                                        Shorts
+                                    </Link>
                                 </li>
                                 <li className="flex items-center border-b-2 border-solid border-cement">
-                                    <Link href="/saias">Saias</Link>
+                                    <Link className="w-full p-1 text-left" href="/saias">
+                                        Saias
+                                    </Link>
                                 </li>
                                 <li className="flex items-center border-b-2 border-solid border-cement">
-                                    <Link href="/casacos">Casacos</Link>
+                                    <Link className="w-full p-1 text-left" href="/casacos">
+                                        Casacos
+                                    </Link>
                                 </li>
                                 <li className="flex items-center border-b-2 border-solid border-cement">
-                                    <Link href="/jeans">Jeans</Link>
+                                    <Link className="w-full p-1 text-left" href="/jeans">
+                                        Jeans
+                                    </Link>
                                 </li>
                                 <li className="flex items-center border-b-2 border-solid border-cement">
-                                    <Link href="/macacao">Macacão</Link>
+                                    <Link className="w-full p-1 text-left" href="/macacao">
+                                        Macacão
+                                    </Link>
                                 </li>
                                 <li className="flex items-center border-b-2 border-solid border-cement">
-                                    <Link href="/calcados">Calçados</Link>
+                                    <Link className="w-full p-1 text-left" href="/calcados">
+                                        Calçados
+                                    </Link>
                                 </li>
                             </ul>
                         </div>
@@ -108,25 +136,39 @@ export default function Header() {
                         <div className="absolute hidden w-full">
                             <ul className="w-full p-2 bg-black flex flex-col gap-2">
                                 <li className="flex items-center border-b-2 border-solid border-cement">
-                                    <Link href="/vestido">Vestido</Link>
+                                    <Link className="w-full p-1 text-left" href="/vestido">
+                                        Vestido
+                                    </Link>
                                 </li>
                                 <li className="flex items-center border-b-2 border-solid border-cement">
-                                    <Link href="/shorts">Shorts</Link>
+                                    <Link className="w-full p-1 text-left" href="/shorts">
+                                        Shorts
+                                    </Link>
                                 </li>
                                 <li className="flex items-center border-b-2 border-solid border-cement">
-                                    <Link href="/saias">Saias</Link>
+                                    <Link className="w-full p-1 text-left" href="/saias">
+                                        Saias
+                                    </Link>
                                 </li>
                                 <li className="flex items-center border-b-2 border-solid border-cement">
-                                    <Link href="/casacos">Casacos</Link>
+                                    <Link className="w-full p-1 text-left" href="/casacos">
+                                        Casacos
+                                    </Link>
                                 </li>
                                 <li className="flex items-center border-b-2 border-solid border-cement">
-                                    <Link href="/jeans">Jeans</Link>
+                                    <Link className="w-full p-1 text-left" href="/jeans">
+                                        Jeans
+                                    </Link>
                                 </li>
                                 <li className="flex items-center border-b-2 border-solid border-cement">
-                                    <Link href="/macacao">Macacão</Link>
+                                    <Link className="w-full p-1 text-left" href="/macacao">
+                                        Macacão
+                                    </Link>
                                 </li>
                                 <li className="flex items-center border-b-2 border-solid border-cement">
-                                    <Link href="/calcados">Calçados</Link>
+                                    <Link className="w-full p-1 text-left" href="/calcados">
+                                        Calçados
+                                    </Link>
                                 </li>
                             </ul>
                         </div>
@@ -139,16 +181,24 @@ export default function Header() {
                         <div className="absolute hidden w-full">
                             <ul className="w-full p-2 bg-black flex flex-col gap-2">
                                 <li className="flex items-center border-b-2 border-solid border-cement">
-                                    <Link href="/vestido">Vestido</Link>
+                                    <Link className="w-full p-1 text-left" href="/vestido">
+                                        Vestido
+                                    </Link>
                                 </li>
                                 <li className="flex items-center border-b-2 border-solid border-cement">
-                                    <Link href="/shorts">Shorts</Link>
+                                    <Link className="w-full p-1 text-left" href="/shorts">
+                                        Shorts
+                                    </Link>
                                 </li>
                                 <li className="flex items-center border-b-2 border-solid border-cement">
-                                    <Link href="/macacao">Macacão</Link>
+                                    <Link className="w-full p-1 text-left" href="/macacao">
+                                        Macacão
+                                    </Link>
                                 </li>
                                 <li className="flex items-center border-b-2 border-solid border-cement">
-                                    <Link href="/calcados">Calçados</Link>
+                                    <Link className="w-full p-1 text-left" href="/calcados">
+                                        Calçados
+                                    </Link>
                                 </li>
                             </ul>
                         </div>
@@ -161,13 +211,19 @@ export default function Header() {
                         <div className="absolute hidden w-full">
                             <ul className="w-full p-2 bg-black flex flex-col gap-2">
                                 <li className="flex items-center border-b-2 border-solid border-cement">
-                                    <Link href="/saias">Saias</Link>
+                                    <Link className="w-full p-1 text-left" href="/saias">
+                                        Saias
+                                    </Link>
                                 </li>
                                 <li className="flex items-center border-b-2 border-solid border-cement">
-                                    <Link href="/casacos">Casacos</Link>
+                                    <Link className="w-full p-1 text-left" href="/casacos">
+                                        Casacos
+                                    </Link>
                                 </li>
                                 <li className="flex items-center border-b-2 border-solid border-cement">
-                                    <Link href="/jeans">Jeans</Link>
+                                    <Link className="w-full p-1 text-left" href="/jeans">
+                                        Jeans
+                                    </Link>
                                 </li>
                             </ul>
                         </div>
