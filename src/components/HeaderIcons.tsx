@@ -9,10 +9,10 @@ export default function HeaderIcons() {
 
     return (
         <>
-            <IoPersonCircleOutline className="text-5xl" />
+            <IoPersonCircleOutline className="text-4xl" />
             <button className="relative">
-                <TiShoppingCart className="text-5xl" />
-                <div className="cart-icon-number absolute w-1/2 h-1/2 -bottom-1 -right-4 bg-white leading-normal font-semibold text-black text-center rounded-full">
+                <TiShoppingCart className="text-4xl" />
+                <div className="absolute w-1/2 h-1/2 -bottom-1 -right-4 bg-white leading-tight font-semibold text-black text-center rounded-full">
                     {cart.length}
                 </div>
             </button>

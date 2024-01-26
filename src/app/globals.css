@@ -1,3 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.dropdown-categorias:hover > div {
+    display: block;
+}
+
+.dropdown-arrow {
+    transition: 200ms linear;
+}
+
+.dropdown-categorias:hover .dropdown-arrow {
+    transform: rotate(90deg);
+}
+
