@@ -21,7 +21,8 @@ const CartContext = createContext<CartContextType>(null)
 
 export const CarrinhoContextProvider = ({ children }: { children: ReactNode }) => {
     const [cart, setCart] = useState<CartItemType[]>(
-        JSON.parse(localStorage.getItem("cart") ?? "[]")
+        []
+        // JSON.parse(localStorage.getItem("cart") ?? "[]")
     )
 
     useEffect(() => {
