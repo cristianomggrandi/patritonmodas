@@ -17,7 +17,7 @@ export default function Header() {
                                 src="/logopatritonmodas.jpg"
                                 alt="Logo Patriton Modas"
                                 width={135}
-                                height={225}
+                                height={81}
                             />
                         </Link>
                     </li>
