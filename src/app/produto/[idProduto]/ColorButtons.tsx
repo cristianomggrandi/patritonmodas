@@ -3,7 +3,7 @@
 import { useSearchParams, useRouter } from "next/navigation"
 import { useState } from "react"
 
-export default function () {
+export default function ColorButtons() {
     const searchParams = useSearchParams()
     const router = useRouter()
 
