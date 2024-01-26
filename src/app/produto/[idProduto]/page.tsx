@@ -24,7 +24,7 @@ export default function ProductPage({
         <main>
             <div className="flex p-16 gap-12">
                 <div className="flex w-1/2 justify-end">
-                    <Image src="/roupafeminina.jpg" alt="Imagem product" height={320} width={240} />
+                    <Image src="/roupafeminina.jpg" alt="Imagem product" height={425} width={240} />
                 </div>
                 <div className="w-1/2 flex flex-col justify-between">
                     <div className="">
