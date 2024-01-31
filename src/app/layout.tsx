@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import "./globals.css"
 import Header from "./header"
-import { CarrinhoContextProvider } from "./contexts/CartContext"
+import { CartContextProvider } from "./contexts/CartContext"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -17,13 +17,13 @@ export default function RootLayout({
     children: React.ReactNode
 }>) {
     return (
-        <html lang="en">
-            <CarrinhoContextProvider>
-                <body className={inter.className}>
+        <html lang="en" className="h-screen">
+            <CartContextProvider>
+                <body className={`${inter.className} min-h-screen flex flex-col`}>
                     <Header />
                     {children}
                 </body>
-            </CarrinhoContextProvider>
+            </CartContextProvider>
         </html>
     )
 }

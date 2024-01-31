@@ -1,9 +1,9 @@
 "use client"
 
 import useCartContext from "@/app/contexts/CartContext"
-import { CartItemType } from "@/types/CartItem"
+import { ProductType } from "@/types/Product"
 
-export default function BuyButton({ product }: { product: CartItemType }) {
+export default function BuyButton({ product }: { product: ProductType }) {
     const { addToCart } = useCartContext()
 
     const handleClick = () => addToCart(product)

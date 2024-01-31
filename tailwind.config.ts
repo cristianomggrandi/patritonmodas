@@ -20,6 +20,12 @@ const config: Config = {
         contrast: "#C3CBD5",
         cement: "#757E78",
         beige: "#f5f5dc",
+        success: "#19EA4A",
+        warning: "#f0d500",
+        error: "#f32013",
+      },
+      boxShadow: {
+        "login": "0 20px 80px -20px rgba(0, 0, 0, 0.3)"
       }
     },
   },

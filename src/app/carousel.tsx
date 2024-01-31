@@ -6,7 +6,7 @@ import { useEffect, useState } from "react"
 export default function Carousel() {
     const [imageIndex, setImageIndex] = useState(0)
 
-    const imageArray = ["/slide.jpeg", "/slideexemplo.jpg", "/slideexemplo2.jpg"]
+    const imageArray = ["/slide.jpeg"]//, "/slideexemplo.jpg", "/slideexemplo2.jpg"]
 
     useEffect(() => {
         const imageChangeInterval = setInterval(() => {
@@ -16,6 +16,7 @@ export default function Carousel() {
         return () => clearInterval(imageChangeInterval)
     })
 
+    // TODO: Conferir se precisa
     const proportions = {
         x: 939,
         y: 372,

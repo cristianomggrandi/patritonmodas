@@ -1,16 +1,17 @@
-import HeaderIcons from "@/components/HeaderIcons"
+import CartIcon from "@/components/CartIcon"
+import ProfileIcon from "@/components/ProfileIcon"
 import Image from "next/image"
 import Link from "next/link"
 import { IoIosArrowForward } from "react-icons/io"
 
-export default function Header() {
+export default async function Header() {
     return (
         <header>
             <nav className="bg-white text-primary">
                 <ul className="flex justify-around">
                     <li className="flex flex-1 items-center justify-center">
                         <input
-                            className="border-primary border-2 text-white rounded-full p-2"
+                            className="hover:outline-2 focus:outline-2 outline-1 outline outline-primary text-primary rounded-full p-2"
                             placeholder="O que você procura?"
                         />
                     </li>
@@ -25,7 +26,8 @@ export default function Header() {
                         </Link>
                     </li>
                     <li className="flex flex-1 items-center justify-center gap-3">
-                        <HeaderIcons />
+                        <ProfileIcon />
+                        <CartIcon />
                     </li>
                 </ul>
             </nav>
@@ -46,7 +48,7 @@ export default function Header() {
                             Masculino
                             <IoIosArrowForward className="dropdown-arrow inline-block ml-3" />
                         </Link>
-                        <div className="absolute hidden w-full z-20">
+                        <div className="absolute hidden w-full z-20 shadow-md shadow-primary">
                             <ul className="w-full p-2 bg-primary flex flex-col">
                                 <li className="flex items-center border-b-2 border-solid border-white">
                                     <Link className="w-full p-1 text-left" href="/vestido">
@@ -91,7 +93,7 @@ export default function Header() {
                             Feminino
                             <IoIosArrowForward className="dropdown-arrow inline-block ml-3" />
                         </Link>
-                        <div className="absolute hidden w-full z-20">
+                        <div className="absolute hidden w-full z-20 shadow-md shadow-primary">
                             <ul className="w-full p-2 bg-primary flex flex-col">
                                 <li className="flex items-center border-b-2 border-solid border-white">
                                     <Link className="w-full p-1 text-left" href="/vestido">
@@ -136,7 +138,7 @@ export default function Header() {
                             Acessórios
                             <IoIosArrowForward className="dropdown-arrow inline-block ml-3" />
                         </Link>
-                        <div className="absolute hidden w-full z-20">
+                        <div className="absolute hidden w-full z-20 shadow-md shadow-primary">
                             <ul className="w-full p-2 bg-primary flex flex-col">
                                 <li className="flex items-center border-b-2 border-solid border-white">
                                     <Link className="w-full p-1 text-left" href="/vestido">
@@ -181,7 +183,7 @@ export default function Header() {
                             Blusas
                             <IoIosArrowForward className="dropdown-arrow inline-block ml-3" />
                         </Link>
-                        <div className="absolute hidden w-full z-20">
+                        <div className="absolute hidden w-full z-20 shadow-md shadow-primary">
                             <ul className="w-full p-2 bg-primary flex flex-col">
                                 <li className="flex items-center border-b-2 border-solid border-white">
                                     <Link className="w-full p-1 text-left" href="/vestido">
@@ -211,7 +213,7 @@ export default function Header() {
                             Calça
                             <IoIosArrowForward className="dropdown-arrow inline-block ml-3" />
                         </Link>
-                        <div className="absolute hidden w-full z-20">
+                        <div className="absolute hidden w-full z-20 shadow-md shadow-primary">
                             <ul className="w-full p-2 bg-primary flex flex-col">
                                 <li className="flex items-center border-b-2 border-solid border-white">
                                     <Link className="w-full p-1 text-left" href="/saias">
