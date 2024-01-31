@@ -11,65 +11,65 @@ export type InfoType = {
     status: "success" | "warning" | "error" | undefined
 }
 
+async function login(formData: FormData) {
+    "use server"
+    try {
+        const email = formData.get("email")?.toString()
+        const password = formData.get("password")?.toString()
+
+        // TODO
+        if (!email || !password) return
+
+        const user = await prisma.user.findUnique({
+            where: {
+                email,
+            },
+        })
+
+        // TODO
+        if (!user) {
+            console.log("Usuário não encontrado")
+            return
+        }
+
+        const isMatch = await bcrypt.compare(password, user.password)
+
+        if (!isMatch) {
+            console.log("E-mail e senha inválidos")
+            return
+        }
+
+        await AuthService.createSessionToken({ sub: user.id, name: user.name })
+    } catch (error) {
+        console.error(error)
+    }
+    redirect("/")
+}
+
+async function recoverPassword(email: string): Promise<InfoType> {
+    "use server"
+    try {
+        // TODO
+        if (!email)
+            return {
+                message: "Digite seu e-mail para recuperar sua senha.",
+                status: "warning",
+            }
+
+        return {
+            message: "Senha enviada ao e-mail preenchido.",
+            status: "success",
+        }
+    } catch (error) {
+        console.error(error)
+        return {
+            message: "Erro ao recuperar senha.",
+            status: "error",
+        }
+    }
+}
+
 export default function Login() {
-    async function login(formData: FormData) {
-        "use server"
-        try {
-            const email = formData.get("email")?.toString()
-            const password = formData.get("password")?.toString()
-
-            // TODO
-            if (!email || !password) return
-
-            const user = await prisma.user.findUnique({
-                where: {
-                    email,
-                },
-            })
-
-            // TODO
-            if (!user) {
-                console.log("Usuário não encontrado")
-                return
-            }
-
-            const isMatch = await bcrypt.compare(password, user.password)
-
-            if (!isMatch) {
-                console.log("E-mail e senha inválidos")
-                return
-            }
-
-            await AuthService.createSessionToken({ sub: user.id, name: user.name })
-        } catch (error) {
-            console.error(error)
-        }
-        redirect("/")
-    }
-
-    async function recoverPassword(email: string): Promise<InfoType> {
-        "use server"
-        try {
-            // TODO
-            if (!email)
-                return {
-                    message: "Digite seu e-mail para recuperar sua senha.",
-                    status: "warning",
-                }
-
-            return {
-                message: "Senha enviada ao e-mail preenchido.",
-                status: "success",
-            }
-        } catch (error) {
-            console.error(error)
-            return {
-                message: "Erro ao recuperar senha.",
-                status: "error",
-            }
-        }
-    }
-
     return (
         <main className="flex-1 flex items-center justify-center h-full p-6">
             <div className="flex flex-col gap-6 min-w-[30%] max-w-36 p-4 rounded-lg shadow-md shadow-primary">
