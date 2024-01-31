@@ -38,7 +38,10 @@ async function isSessionValid() {
     return false
 }
 
-async function getUserDetails() {
+async function getUserDetails(): Promise<{
+    id: string
+    name: string
+} | null> {
     const sessionCookie = cookies().get("session")
 
     if (sessionCookie) {
@@ -48,7 +51,9 @@ async function getUserDetails() {
 
         const isValid = (exp as number) * 1000 > currentDate
 
-        if (isValid) return { id: sub, name }
+        if (!sub || !name) return null
+
+        if (isValid) return { id: sub, name: name as string }
         else return null
     }
 

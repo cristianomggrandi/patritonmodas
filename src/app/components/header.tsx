@@ -1,10 +1,13 @@
 import CartIcon from "@/components/CartIcon"
 import ProfileIcon from "@/components/ProfileIcon"
+import AuthService from "@/modules/auth/session/session-token"
 import Image from "next/image"
 import Link from "next/link"
 import { IoIosArrowForward } from "react-icons/io"
 
 export default async function Header() {
+    const user = await AuthService.getUserDetails()
+
     return (
         <header>
             <nav className="bg-white text-primary">
@@ -26,7 +29,7 @@ export default async function Header() {
                         </Link>
                     </li>
                     <li className="flex flex-1 items-center justify-center gap-3">
-                        <ProfileIcon />
+                        <ProfileIcon user={user} />
                         <CartIcon />
                     </li>
                 </ul>
