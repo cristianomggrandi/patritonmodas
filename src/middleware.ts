@@ -6,12 +6,17 @@ export const config = {
 }
 
 // const publicRoutes = ["/", "/portal/cadastro", "/portal/login"]
+const privateRoutes = ["/perfil"]
 const notLoggedRoutes = ["/login", "/cadastro"]
 
 export async function middleware(req: NextRequest) {
     const pathname = req.nextUrl.pathname
 
     const isLogged = await AuthService.isSessionValid()
+
+    if (!isLogged && privateRoutes.includes(pathname)) {
+        return NextResponse.redirect(new URL("/login", req.url))
+    }
 
     if (notLoggedRoutes.includes(pathname)) {
         if (!isLogged) return NextResponse.next()
