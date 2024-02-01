@@ -39,10 +39,7 @@ export default async function Perfil() {
                                 key={option.label}
                                 className="border-b-[1px] border-primary p-2 uppercase font-semibold"
                             >
-                                <Link
-                                    className="flex gap-4 items-center"
-                                    href={option.link}
-                                >
+                                <Link className="flex gap-4 items-center" href={option.link}>
                                     <option.icon className="text-3xl" />
                                     <span>{option.label}</span>
                                 </Link>

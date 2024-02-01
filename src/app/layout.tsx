@@ -3,6 +3,7 @@ import { Inter } from "next/font/google"
 import "./globals.css"
 import Header from "./components/header"
 import { CartContextProvider } from "./contexts/CartContext"
+import CartDetails from "./components/cart-details"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -19,9 +20,10 @@ export default function RootLayout({
     return (
         <html lang="en" className="h-screen">
             <CartContextProvider>
-                <body className={`${inter.className} min-h-screen flex flex-col`}>
+                <body className={`${inter.className} min-h-screen flex flex-col overflow-hidden`}>
                     <Header />
                     {children}
+                    <CartDetails />
                 </body>
             </CartContextProvider>
         </html>

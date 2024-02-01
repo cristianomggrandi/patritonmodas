@@ -6,7 +6,7 @@ import { IoIosArrowForward } from "react-icons/io"
 
 export default function Header() {
     return (
-        <header>
+        <header className="h-[18vh] flex flex-col">
             <nav className="bg-white text-primary">
                 <ul className="flex justify-around">
                     <li className="flex flex-1 items-center justify-center">
@@ -31,8 +31,8 @@ export default function Header() {
                     </li>
                 </ul>
             </nav>
-            <nav>
-                <ul className="flex justify-around bg-primary text-white p-2 list-none">
+            <nav className="flex-1">
+                <ul className="flex h-full justify-around bg-primary text-white p-2 list-none">
                     <li className="flex-1 text-center relative justify-center hover:border-b-2 hover:-mb-1 border-solid border-cement">
                         <Link className="block w-full" href="/novidades">
                             Novidades
