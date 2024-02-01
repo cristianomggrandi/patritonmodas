@@ -9,7 +9,6 @@
     "lint": "next lint",
     "prettier-format": "prettier --config .prettierrc src/**/*.ts src/**/*.tsx --write",
     "postinstall": "prisma generate"
-
   },
   "dependencies": {
     "@prisma/client": "^5.9.0",
@@ -19,7 +18,9 @@
     "next": "14.1.0",
     "react": "^18",
     "react-dom": "^18",
-    "react-icons": "^5.0.1"
+    "react-icons": "^5.0.1",
+    "zod": "^3.22.4",
+    "zustand": "^4.5.0"
   },
   "devDependencies": {
     "@types/bcrypt": "^5.0.2",

@@ -14,3 +14,11 @@
     transform: rotate(90deg);
 }
 
+.picker-container input:checked + label {
+    outline-width: 2px;
+    outline-offset: 1px;
+}
+
+header input[type="checkbox"]:checked ~ .cart-dropdown {
+    height: 40vh;
+}

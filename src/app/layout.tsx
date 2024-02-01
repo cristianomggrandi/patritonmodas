@@ -20,10 +20,10 @@ export default function RootLayout({
     return (
         <html lang="en" className="h-screen">
             <CartContextProvider>
-                <body className={`${inter.className} min-h-screen flex flex-col overflow-hidden`}>
+                <body className={`${inter.className} min-h-screen flex flex-col `}>
+                    {/* overflow-hidden ??? */}
                     <Header />
                     {children}
-                    <CartDetails />
                 </body>
             </CartContextProvider>
         </html>

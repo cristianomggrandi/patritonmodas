@@ -25,7 +25,7 @@ const config: Config = {
         error: "#f32013",
       },
       boxShadow: {
-        "login": "0 20px 80px -20px rgba(0, 0, 0, 0.3)"
+        "dropdown": "0 20px 80px -20px rgba(0, 0, 0, 0.3)"
       }
     },
   },

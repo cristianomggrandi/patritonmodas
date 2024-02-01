@@ -1,12 +1,17 @@
-import CartIcon from "@/components/CartIcon"
 import ProfileIcon from "@/components/ProfileIcon"
 import Image from "next/image"
 import Link from "next/link"
 import { IoIosArrowForward } from "react-icons/io"
+import { TiShoppingCart } from "react-icons/ti"
+import { useCartStore } from "../store/cart-store"
+import { IoPersonCircleOutline } from "react-icons/io5"
+import CartDetails from "./cart-details"
 
 export default function Header() {
+    const cart = useCartStore.getState().cart
+
     return (
-        <header className="h-[18vh] flex flex-col">
+        <header className="flex flex-col">
             <nav className="bg-white text-primary">
                 <ul className="flex justify-around">
                     <li className="flex flex-1 items-center justify-center">
@@ -25,10 +30,37 @@ export default function Header() {
                             />
                         </Link>
                     </li>
-                    <li className="flex flex-1 items-center justify-center gap-3">
-                        <ProfileIcon />
-                        <CartIcon />
-                    </li>
+                    <div className="flex flex-1 items-center justify-center gap-3">
+                        <li className="relative w-9 h-9">
+                            <Link href="/perfil">
+                                <IoPersonCircleOutline className="text-4xl" />
+                            </Link>
+                        </li>
+                        {/* TODO: Checar se tab chega aqui */}
+                        <li className="relative w-9 h-full">
+                            <input
+                                id="open-cart-checkbox"
+                                className="hidden peer"
+                                type="checkbox"
+                            />
+                            <label
+                                htmlFor="open-cart-checkbox"
+                                className="relative cursor-pointer h-full block"
+                            >
+                                <TiShoppingCart className="text-4xl h-full" />
+                                {cart.length ? (
+                                    <div className="absolute w-4 h-4 aspect-square bottom-2 -right-3 leading-none m-auto text-primary text-center font-semibold rounded-full outline">
+                                        {cart.length}
+                                    </div>
+                                ) : null}
+                            </label>
+                            <CartDetails />
+                            <label
+                                htmlFor="open-cart-checkbox"
+                                className="fixed hidden h-screen w-screen peer-checked:block bg-primary right-0 top-0 opacity-0 isolate"
+                            />
+                        </li>
+                    </div>
                 </ul>
             </nav>
             <nav className="flex-1">
@@ -88,7 +120,7 @@ export default function Header() {
                             </ul>
                         </div>
                     </li>
-                    <li className="flex-1 text-center relative justify-center relative dropdown-categorias hover:border-b-2 hover:-mb-1 border-solid border-cement">
+                    <li className="flex-1 text-center relative justify-center dropdown-categorias hover:border-b-2 hover:-mb-1 border-solid border-cement">
                         <Link className="block w-full" href="/feminino">
                             Feminino
                             <IoIosArrowForward className="dropdown-arrow inline-block ml-3" />
@@ -133,7 +165,7 @@ export default function Header() {
                             </ul>
                         </div>
                     </li>
-                    <li className="flex-1 text-center relative justify-center relative hover:border-b-2 hover:-mb-1 border-solid border-cement dropdown-categorias">
+                    <li className="flex-1 text-center relative justify-center hover:border-b-2 hover:-mb-1 border-solid border-cement dropdown-categorias">
                         <Link className="block w-full" href="/promoção">
                             Acessórios
                             <IoIosArrowForward className="dropdown-arrow inline-block ml-3" />
@@ -178,7 +210,7 @@ export default function Header() {
                             </ul>
                         </div>
                     </li>
-                    <li className="flex-1 text-center relative justify-center relative hover:border-b-2 hover:-mb-1 border-solid border-cement dropdown-categorias">
+                    <li className="flex-1 text-center relative justify-center hover:border-b-2 hover:-mb-1 border-solid border-cement dropdown-categorias">
                         <Link className="block w-full" href="/blusas">
                             Blusas
                             <IoIosArrowForward className="dropdown-arrow inline-block ml-3" />
@@ -208,7 +240,7 @@ export default function Header() {
                             </ul>
                         </div>
                     </li>
-                    <li className="flex-1 text-center relative justify-center relative hover:border-b-2 hover:-mb-1 border-solid border-cement dropdown-categorias">
+                    <li className="flex-1 text-center relative justify-center hover:border-b-2 hover:-mb-1 border-solid border-cement dropdown-categorias">
                         <Link className="block w-full" href="/calça">
                             Calça
                             <IoIosArrowForward className="dropdown-arrow inline-block ml-3" />
