@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-.dropdown-categorias:hover > div {
+.dropdown-categorias:hover > div, .dropdown-categorias:focus-within > div {
     display: block;
 }
 
@@ -10,7 +10,7 @@
     transition: 200ms linear;
 }
 
-.dropdown-categorias:hover .dropdown-arrow {
+.dropdown-categorias:hover .dropdown-arrow, .dropdown-categorias:focus-within .dropdown-arrow {
     transform: rotate(90deg);
 }
 

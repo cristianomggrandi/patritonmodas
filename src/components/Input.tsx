@@ -13,7 +13,7 @@ type InputProps = {
 }
 
 export default function Input(props: InputProps) {
-    let className = "hover:outline-2 focus:outline-2 outline-1 outline outline-primary bg-white"
+    let className = "focus:outline-2 outline-1 outline outline-primary bg-white"
 
     switch (props.size ?? "md") {
         case "sm":
