@@ -9,7 +9,7 @@ export default function CartDetails() {
                 {cart.length ? (
                     <div>
                         {cart.map(item => (
-                            <div>{item.name}</div>
+                            <div key={item.id}>{item.name}</div>
                         ))}
                     </div>
                 ) : (
