@@ -18,7 +18,3 @@
     outline-width: 2px;
     outline-offset: 1px;
 }
-
-header input[type="checkbox"]:checked ~ .cart-dropdown {
-    height: 40vh;
-}
