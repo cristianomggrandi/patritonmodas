@@ -5,6 +5,7 @@ import { TiShoppingCart } from "react-icons/ti"
 import { useCartStore } from "../store/cart-store"
 import { IoPersonCircleOutline } from "react-icons/io5"
 import CartDetails from "./cart-details"
+import CartIcon from "./cart-icon"
 
 export default function Header() {
     const cart = useCartStore.getState().cart
@@ -42,17 +43,7 @@ export default function Header() {
                                 className="hidden peer"
                                 type="checkbox"
                             />
-                            <label
-                                htmlFor="open-cart-checkbox"
-                                className="relative cursor-pointer h-full block"
-                            >
-                                <TiShoppingCart className="text-4xl h-full" />
-                                {cart.length ? (
-                                    <div className="absolute w-4 h-4 aspect-square bottom-2 -right-3 leading-none m-auto text-primary text-center font-semibold rounded-full outline">
-                                        {cart.length}
-                                    </div>
-                                ) : null}
-                            </label>
+                            <CartIcon />
                             <CartDetails />
                             <label
                                 htmlFor="open-cart-checkbox"

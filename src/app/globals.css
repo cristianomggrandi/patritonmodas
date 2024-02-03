@@ -14,7 +14,18 @@
     transform: rotate(90deg);
 }
 
-.picker-container input:checked + label {
-    outline-width: 2px;
-    outline-offset: 1px;
+.cart-icon::before {
+    content: attr(data-cart-length);
+    position: absolute;
+    width: 1.25rem;
+    height: 1.25rem;
+    line-height: 0.75rem;
+    bottom: 0.5rem;
+    right: -1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid theme('colors.primary');
+    border-radius: 1rem;
+    font-weight: 500;
 }
