@@ -3,7 +3,7 @@
 import { changeSearchParamsWithoutRerender } from "@/utils/router-utils"
 import { useState } from "react"
 
-export default function SizeButtons(props: { sizes: string[]; defaultSize: string }) {
+export default function SizeOptions(props: { sizes: string[]; defaultSize: string }) {
     const [selectedSize, setSelectedSize] = useState(props.defaultSize)
 
     const handleChange = (e: any) => {
@@ -19,25 +19,21 @@ export default function SizeButtons(props: { sizes: string[]; defaultSize: strin
     return (
         <div>
             <p className="my-1">Selecione o tamanho:</p>
-            <ul className="flex gap-2">
+            <ul className="flex gap-2 items-center">
                 {props.sizes.map(size => (
                     <li key={size}>
                         <input
                             id={"size-" + size}
                             value={size}
                             type="radio"
-                            className="hidden"
+                            className="peer hidden"
                             checked={size === selectedSize}
                             onChange={handleChange}
                             required
                         />
                         <label
                             htmlFor={"size-" + size}
-                            className="h-8 w-8 bg-contrast font-semibold block rounded-md text-center leading-loose text-primary outline-1 outline-primary outline uppercase"
-                            style={{
-                                outlineWidth: size === selectedSize ? "2px" : "",
-                                outlineOffset: size === selectedSize ? "1px" : "",
-                            }}
+                            className="h-8 w-8 peer-checked:h-9 peer-checked:w-9 peer-checked:border-2 border-[1px] border-primary bg-contrast font-semibold block rounded-md text-center leading-loose text-primary uppercase"
                         >
                             {size}
                         </label>

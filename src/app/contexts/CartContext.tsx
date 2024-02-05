@@ -1,5 +1,6 @@
 "use client"
 
+import { ProductType } from "@/types/Product"
 import {
     createContext,
     Dispatch,
@@ -9,7 +10,6 @@ import {
     useEffect,
     useState,
 } from "react"
-import { ProductType } from "@/types/Product"
 
 type CartContextType = {
     cart: ProductType[]
@@ -23,8 +23,7 @@ const CartContext = createContext<CartContextType>(null)
 
 export const CartContextProvider = ({ children }: { children: ReactNode }) => {
     const [cart, setCart] = useState<ProductType[]>(
-        []
-        // JSON.parse(localStorage.getItem("cart") ?? "[]")
+        typeof window !== "undefined" ? JSON.parse(localStorage?.getItem("cart") ?? "[]") : []
     )
     const [openCart, setOpenCart] = useState(false)
 

@@ -1,9 +1,9 @@
+import { ProductType } from "@/types/Product"
 import Image from "next/image"
-import ColorButtons from "./ColorButtons"
-import SizeButtons from "./SizeButtons"
-import { useCartStore } from "@/app/store/cart-store"
-import addProductAction from "@/app/actions/add-product"
-import Link from "next/link"
+import { notFound } from "next/navigation"
+import BuyButton from "./components/BuyButton"
+import ColorButtons from "./components/ColorOptions"
+import SizeButtons from "./components/SizeOptions"
 
 type ParamType = { [key: string]: string | string[] | undefined }
 
@@ -14,13 +14,15 @@ export default function ProductPage({
     params: ParamType
     searchParams: ParamType
 }) {
+    if (isNaN(Number(params.idProduto))) notFound()
+
     const colors = ["fff", "000", "ff0", "f00", "f0f", "0ff"]
     const sizes = ["p", "m", "g", "gg", "xg"]
 
     const defaultColor = colors.find(c => c === searchParams.cor) || colors[0]
     const defaultSize = sizes.find(c => c === searchParams.tamanho) || sizes[0]
 
-    const product = {
+    const product: ProductType = {
         id: Number(params.idProduto),
         name: "Vestido Teste",
         price: 119.9,
@@ -38,14 +40,11 @@ export default function ProductPage({
                         <h1 className="font-bold text-3xl">{product.name}</h1>
                         <span className="">Id: {product.id}</span>
                     </div>
-                    {/* TODO: Alterar outline para border */}
                     <ColorButtons colors={colors} defaultColor={defaultColor} />
                     <SizeButtons sizes={sizes} defaultSize={defaultSize} />
                     <div className="font-bold text-2xl">
                         <span className="my-3 font-bold text-2xl block">R$ {product.price}</span>
-                        <button className="bg-primary text-white border-2 border-solid border-neutral-900 rounded-xl uppercase py-3 px-8">
-                            Comprar
-                        </button>
+                        <BuyButton product={product} />
                     </div>
                 </div>
             </div>

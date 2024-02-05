@@ -3,7 +3,7 @@
 import { changeSearchParamsWithoutRerender } from "@/utils/router-utils"
 import { useState } from "react"
 
-export default function ColorButtons(props: { colors: string[]; defaultColor: string }) {
+export default function ColorOptions(props: { colors: string[]; defaultColor: string }) {
     const [selectedColor, setSelectedColor] = useState(props.defaultColor)
 
     const handleChange = (e: any) => {
@@ -19,25 +19,23 @@ export default function ColorButtons(props: { colors: string[]; defaultColor: st
     return (
         <div>
             <p className="my-1">Selecione a cor:</p>
-            <ul className="flex gap-2">
+            <ul className="flex gap-2 items-center">
                 {props.colors.map(color => (
                     <li key={color}>
                         <input
                             id={"color-" + color}
                             value={color}
                             type="radio"
-                            className="hidden"
+                            className="peer hidden"
                             checked={color === selectedColor}
                             onChange={handleChange}
                             required
                         />
                         <label
                             htmlFor={"color-" + color}
-                            className="h-8 w-8 block rounded-md outline outline-1 outline-primary"
+                            className="h-8 w-8 peer-checked:h-9 peer-checked:w-9 peer-checked:border-2 border-[1px] block rounded-md border-primary"
                             style={{
                                 backgroundColor: "#" + color,
-                                outlineWidth: color === selectedColor ? "2px" : "",
-                                outlineOffset: color === selectedColor ? "1px" : "",
                             }}
                         />
                     </li>
