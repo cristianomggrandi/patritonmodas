@@ -28,7 +28,6 @@ export default async function Perfil() {
     if (!user) redirect("/")
 
     return (
-        <main className="flex-1 flex items-center justify-center p-6">
             <div className="flex flex-col gap-6 min-w-[30%] max-w-36 p-4 rounded-lg shadow-md shadow-primary">
                 <h1 className="text-3xl text-center text-primary font-semibold">Perfil</h1>
                 <h2 className="text-2xl text-primary font-semibold">{user.name}</h2>
@@ -48,6 +47,5 @@ export default async function Perfil() {
                     </ul>
                 </div>
             </div>
-        </main>
     )
 }

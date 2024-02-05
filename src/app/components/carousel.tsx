@@ -28,7 +28,7 @@ export default function Carousel() {
     }
 
     return (
-        <div className="w-full overflow-hidden">
+        <div className="h-full w-full overflow-hidden">
             <Link href={imageArray[imageIndex].link}>
                 <div className="w-full h-full">
                     {imageArray.map((image, index) => (

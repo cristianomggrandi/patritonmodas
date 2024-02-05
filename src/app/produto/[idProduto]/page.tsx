@@ -30,24 +30,22 @@ export default function ProductPage({
     }
 
     return (
-        <main>
-            <div className="flex p-16 gap-12">
-                <div className="flex w-1/2 justify-end">
-                    <Image src="/roupafeminina.jpg" alt="Imagem product" height={425} width={240} />
+        <div className="flex p-6 gap-12">
+            <div className="flex w-1/2 justify-end">
+                <Image src="/roupafeminina.jpg" alt="Imagem product" height={425} width={240} />
+            </div>
+            <div className="w-1/2 flex flex-col justify-between">
+                <div>
+                    <h1 className="font-bold text-3xl">{product.name}</h1>
+                    <span className="">Id: {product.id}</span>
                 </div>
-                <div className="w-1/2 flex flex-col justify-between">
-                    <div>
-                        <h1 className="font-bold text-3xl">{product.name}</h1>
-                        <span className="">Id: {product.id}</span>
-                    </div>
-                    <ColorButtons colors={colors} defaultColor={defaultColor} />
-                    <SizeButtons sizes={sizes} defaultSize={defaultSize} />
-                    <div className="font-bold text-2xl">
-                        <span className="my-3 font-bold text-2xl block">R$ {product.price}</span>
-                        <BuyButton product={product} />
-                    </div>
+                <ColorButtons colors={colors} defaultColor={defaultColor} />
+                <SizeButtons sizes={sizes} defaultSize={defaultSize} />
+                <div className="font-bold text-2xl">
+                    <span className="my-3 font-bold text-2xl block">R$ {product.price}</span>
+                    <BuyButton product={product} />
                 </div>
             </div>
-        </main>
+        </div>
     )
 }
