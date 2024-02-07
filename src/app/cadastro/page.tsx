@@ -3,6 +3,7 @@ import prisma from "@/lib/prisma"
 import AuthService from "@/modules/auth/session/session-token"
 import bcrypt from "bcrypt"
 import { redirect } from "next/navigation"
+import Button from "../components/button"
 
 export default function Cadastro() {
     async function createAccount(formData: FormData) {
@@ -58,13 +59,8 @@ export default function Cadastro() {
                     type="password"
                     required
                 />
-                <div className="w-full">
-                    <button
-                        type="submit"
-                        className="rounded mt-2 p-1 bg-primary text-white uppercase w-full"
-                    >
-                        Cadastrar
-                    </button>
+                <div className="mt-2">
+                    <Button type="submit">Cadastrar</Button>
                 </div>
             </form>
         </div>

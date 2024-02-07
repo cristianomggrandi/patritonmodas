@@ -2,8 +2,8 @@ import Input from "@/components/Input"
 import prisma from "@/lib/prisma"
 import AuthService from "@/modules/auth/session/session-token"
 import bcrypt from "bcrypt"
-import Link from "next/link"
 import { redirect } from "next/navigation"
+import Button from "../components/button"
 import RecoverPassword from "./components/recover-password-button"
 
 export type InfoType = {
@@ -77,20 +77,10 @@ export default function Login() {
                 <Input id="login-email" name="email" label="E-mail" type="email" required />
                 <Input id="login-password" name="password" label="Senha" type="password" required />
                 <RecoverPassword recoverPassword={recoverPassword} />
-                <div className="w-full">
-                    <button
-                        type="submit"
-                        className="rounded mt-2 p-1 bg-primary text-white uppercase w-full"
-                    >
-                        Entrar
-                    </button>
-                </div>
-                <Link
-                    href="/cadastro"
-                    className="rounded mt-2 p-1 outline outline-primary outline-1 text-primary text-center font-semibold uppercase w-full"
-                >
+                <Button type="submit">Entrar</Button>
+                <Button link href="/cadastro" variant="secondary">
                     Cadastrar
-                </Link>
+                </Button>
             </form>
         </div>
     )

@@ -28,7 +28,7 @@ export default function Input(props: InputProps) {
             break
     }
 
-    if (props.rounded) className = className.concat(" " + props.rounded)
+    if (props.rounded) className = className.concat(" rounded-" + props.rounded)
     else className = className.concat(" rounded")
 
     return (
